@@ -495,7 +495,7 @@ class _PaginationMessageUpdateBuilder extends MessageUpdateBuilder {
       : super(
           content: target.content,
           embeds: target.embeds ?? [],
-          suppressEmbeds: target.flags?.contains(MessageFlags.suppressEmbeds),
+          suppressEmbeds: target.flags?.contains(MessageFlags.suppressEmbeds) == true ? true : null,
           attachments: target.attachments ?? [],
           components: target.components ?? [],
           allowedMentions: target.allowedMentions,
