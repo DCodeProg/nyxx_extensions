@@ -156,7 +156,7 @@ class Pagination extends NyxxPlugin<NyxxGateway> {
       final interaction = event.interaction;
       final data = interaction.data;
 
-      if (data.type != MessageComponentType.button) {
+      if (data.type != ComponentType.button) {
         return;
       }
 
@@ -495,7 +495,7 @@ class _PaginationMessageUpdateBuilder extends MessageUpdateBuilder {
       : super(
           content: target.content,
           embeds: target.embeds ?? [],
-          suppressEmbeds: target.suppressEmbeds == true,
+          suppressEmbeds: target.flags?.contains(MessageFlags.suppressEmbeds),
           attachments: target.attachments ?? [],
           components: target.components ?? [],
           allowedMentions: target.allowedMentions,
