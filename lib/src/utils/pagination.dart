@@ -499,5 +499,6 @@ class _PaginationMessageUpdateBuilder extends MessageUpdateBuilder {
           attachments: target.attachments ?? [],
           components: target.components ?? [],
           allowedMentions: target.allowedMentions,
+          poll: target.poll,
         );
 }
